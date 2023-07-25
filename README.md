@@ -1,4 +1,4 @@
-# Hign Pass
+# High Pass
 
 Adaptive, cross-browser, semantic grid layout using Gulp, Pug, SCSS:
 https://andreisorvanov.github.io/High-Pass/
