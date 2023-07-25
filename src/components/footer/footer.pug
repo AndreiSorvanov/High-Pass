@@ -1,0 +1,24 @@
+footer.footer
+  div.container
+    div.footer__container
+      div.footer__logo-container
+        - var classes = ["footer__logo"]
+        include ./../logo/logo.pug
+        small.footer__copyright Фотостудия High pass&reg; 2018&ndash;#[current-year 2020]
+
+      figure.footer__quote
+        blockquote.footer__quote-text-container
+          p.footer__quote-text Которая из&nbsp;моих фотографий самая любимая?#[br]Та, которую я&nbsp;собираюсь снять завтра.
+        figcaption.footer__quote-caption &copy;&nbsp;Имоджен Каннингем
+
+      address.footer__contacts
+        span.footer__contacts-title Больше интересного:
+        ul.footer__contacts-list
+          li.footer__contacts-item
+            a.footer__contacts-link(href="" aria-label="Одноклассники")
+              svg.footer__contacts-icon(aria-hidden="true")
+                use(href="./images/sprite.svg#ok")
+          li.footer__contacts-item
+            a.footer__contacts-link(href="" aria-label="Вконтакте")
+              svg.footer__contacts-icon(aria-hidden="true")
+                use(href="./images/sprite.svg#vk")

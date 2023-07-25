@@ -1,0 +1,134 @@
+@import "variables";
+
+@mixin absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin phone {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-family: $secondaryFontFamily;
+  font-weight: 500;
+  font-size: 14px;
+  color: $vividOrangeColor;
+
+  & > .phone-icon {
+    position: relative;
+    top: -2px;
+
+    width: 20px;
+    height: 20px;
+
+    fill: currentColor;
+  }
+}
+
+@mixin hashtag($topOffset, $rightOffset) {
+  position: absolute;
+  top: $topOffset;
+  right: $rightOffset;
+
+  padding: 5px 10px;
+
+  font-family: $primaryFontFamily;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: $whiteColor;
+
+  background-color: $blackColor;
+
+  @media (max-width: $breakpointS) {
+    font-size: 12px;
+  }
+}
+
+@mixin primaryButton {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+
+  font-family: $primaryFontFamily;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: $whiteColor;
+  white-space: nowrap;
+
+  background-color: $vividOrangeColor;
+
+  transition: background-color $animationDuration $animationTimingFunction;
+
+  &:focus {
+    outline: 3px solid $strongOrange2Color;
+    outline-offset: 0;
+  }
+
+  &:hover {
+    background-color: $strongOrange1Color;
+  }
+
+  &:active {
+    background-color: $strongOrange2Color;
+  }
+
+  @media (max-width: $breakpointS) {
+    font-size: 14px;
+  }
+}
+
+@mixin secondaryButton {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 3px solid $vividOrangeColor;
+
+  font-family: $primaryFontFamily;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: $whiteColor;
+  white-space: nowrap;
+
+  transition: background-color $animationDuration $animationTimingFunction;
+
+  &:focus {
+    outline: none;
+    background-color: $strongOrange1Color;
+  }
+
+  &:hover {
+    background-color: $vividOrangeColor;
+  }
+
+  &:active {
+    border-color: $strongOrange2Color;
+    background-color: $strongOrange2Color;
+  }
+
+  @media (max-width: $breakpointS) {
+    font-size: 14px;
+  }
+}
+
+@mixin noText {
+  font-size: 0;
+  line-height: 0;
+}
+
+@mixin errorLabel($color) {
+  position: absolute;
+  top: 3px;
+  left: 23px;
+
+  font-family: $primaryFontFamily;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 1;
+  color: $color !important;
+}

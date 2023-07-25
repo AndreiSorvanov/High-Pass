@@ -1,0 +1,104 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.application-form {
+  &__heading {
+    margin: 0;
+    margin-bottom: 5px;
+
+    font-family: $secondaryFontFamily;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 0.9;
+
+    @media (max-width: $breakpointS) {
+      margin-bottom: 11px;
+
+      font-size: 18px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 14px;
+
+    color: $darkGrayColor;
+
+    @media (max-width: $breakpointS) {
+      margin-bottom: 15px;
+
+      font-size: 14px;
+      line-height: 1.29;
+    }
+  }
+
+  &__rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__row {
+    position: relative;
+
+    width: 100%;
+
+    line-height: 0;
+
+    .just-validate-error-label {
+      @include errorLabel($softRedColor);
+    }
+  }
+
+  &__element {
+    width: 100%;
+    padding: 16px 23px;
+    border: none;
+
+    font-family: $primaryFontFamily;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.15;
+    color: $blackColor;
+
+    background-color: $veryLightGrayColor;
+
+    @media (max-width: $breakpointS) {
+      padding: 13px 23px 11px;
+
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      color: $darkGrayColor;
+    }
+
+    &:focus {
+      outline: 1px solid $vividOrangeColor;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $vividOrangeColor;
+      }
+    }
+
+    &.just-validate-error-field {
+      outline: 1px solid $softRedColor;
+    }
+  }
+
+  &__comment {
+    height: 150px;
+    resize: none;
+  }
+
+  &__submit-btn {
+    @include primaryButton;
+    padding: 18px 23px 16px 22px;
+
+    @media (max-width: $breakpointS) {
+      padding: 14px 22px 12px 22px;
+    }
+  }
+}

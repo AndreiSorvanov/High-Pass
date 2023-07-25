@@ -1,0 +1,10 @@
+section(class=[...classes, "contacts-section"], id="contacts")
+  div.container
+    div.contacts-section__container
+      h2.contacts-section__heading Контакты
+      div.contacts-section__grid
+        - var classes = ["contacts-section__map"]
+        include ./map/map.pug
+
+        - var classes = ["contacts-section__application-form"]
+        include ./application-form/application-form.pug

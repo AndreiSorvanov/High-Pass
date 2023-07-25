@@ -1,0 +1,196 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.project {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+
+  &__image {
+    flex: 0 0 auto;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .project_small &,
+    .project_mixed &,
+    .project_medium & {
+      width: 100%;
+      height: 184px;
+      margin-bottom: 18px;
+    }
+
+    .project_large & {
+      @include absolute;
+      z-index: -1;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+    .project_small &,
+    .project_mixed &,
+    .project_medium & {
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
+
+    .project_large & {
+      flex-direction: column;
+      gap: 6px;
+      max-width: 292px;
+      margin-bottom: 10px;
+
+      @media (max-width: $breakpointS) {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__header {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+
+    .project_small &,
+    .project_mixed &,
+    .project_medium & {
+      color: $darkGrayColor;
+    }
+
+    .project_large & {
+      color: $whiteColor;
+
+      @media (max-width: $breakpointS) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    margin-left: -1px;
+
+    font-family: $secondaryFontFamily;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+
+    @media (max-width: $breakpointL) {
+      margin-left: 0;
+    }
+  }
+
+  &__time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: auto;
+
+    font-size: 12px;
+
+    .project_large & {
+      @media (max-width: $breakpointS) {
+        margin-bottom: 5px;
+      }
+    }
+
+    &-icon {
+      width: 14px;
+      height: 14px;
+      margin-right: 4px;
+
+      fill: currentColor;
+    }
+  }
+
+  &__description {
+    width: 100%;
+    max-height: 44px;
+    margin: 0;
+    margin-bottom: auto;
+    overflow: hidden;
+
+    .project_large & {
+      color: $whiteColor;
+
+      @media (max-width: $breakpointS) {
+        margin-bottom: 5px;
+
+        font-size: 14px;
+        line-height: 1.286;
+      }
+    }
+  }
+
+  &__link {
+    .project_small &,
+    .project_mixed &,
+    .project_medium & {
+      @include absolute;
+      @include noText;
+    }
+
+    .project_large & {
+      @include secondaryButton;
+
+      padding: 14px 20px 14px 19px;
+
+      @media (max-width: $breakpointL) {
+        padding: 14px 20px 13px 19px;
+      }
+
+      @media (max-width: $breakpointM) {
+        padding: 14px 20px 13px 19px;
+      }
+
+      @media (max-width: $breakpointS) {
+        padding: 11px 18px 9px 18px;
+      }
+    }
+  }
+
+  &__hashtag {
+    @include hashtag(7px, 7px);
+    padding: 8px 14px 6px 14px;
+
+    @media (max-width: $breakpointL) {
+      @include hashtag(7px, 8px);
+      padding: 8px 14px 6px 14px;
+    }
+
+    @media (max-width: $breakpointS) {
+      @include hashtag(5px, 5px);
+      padding: 5px 14px 5px 15px;
+    }
+  }
+
+  &_small,
+  &_mixed,
+  &_medium {
+    padding-bottom: 3px;
+
+    @media (max-width: $breakpointS) {
+      padding-bottom: 2px;
+    }
+  }
+
+  &_large {
+    padding: 25px 30px 30px;
+
+    @media (max-width: $breakpointL) {
+      padding: 33px 30px 30px;
+    }
+  }
+}

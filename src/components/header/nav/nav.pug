@@ -1,0 +1,24 @@
+nav(class=[...classes, "nav"])
+  button.nav__burger.burger.burger_open(id="open-menu-button" type="button" aria-haspopup="true" aria-controls="menu" aria-label="Открыть меню")
+    svg.burger__icon.burger__icon_open(aria-hidden="true")
+      use(href="./images/sprite.svg#burger")
+  div.nav__menu.menu.menu_closed
+    button.menu__burger.burger.burger_close(id="close-menu-button" type="button" aria-haspopup="true" aria-controls="menu" aria-label="Закрыть меню" tabindex="-1")
+      svg.burger__icon.burger__icon_close(aria-hidden="true")
+        use(href="./images/sprite.svg#cross")
+    ul.menu__list(id="menu" role="menu" aria-labelledby="open-menu-button")
+      -
+        var menuItems = [
+          {title: "О\xA0студии", href: "#about-studio"},
+          {title: "Наши проекты", href: "#our-projects"},
+          {title: "Услуги", href: ""},
+          {title: "Мастер-классы", href: ""},
+          {title: "Контакты", href: "#contacts"}]
+      each menuItem in menuItems
+        li.menu__item(role="none")
+          a.menu__link(href=menuItem.href role="menuitem")= menuItem.title
+    address.menu__contacts
+      a.menu__phone(href=`tel:${phoneNumber}`)
+        svg.menu__phone-icon.phone-icon(aria-hidden="true")
+          use(href="./images/sprite.svg#call")
+        = formatPhoneNumber(phoneNumber)

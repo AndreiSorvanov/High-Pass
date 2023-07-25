@@ -1,0 +1,13 @@
+header.header
+  div.container
+    div.header__container
+      h1.visually-hidden High Pass
+
+      - var classes = ["header__logo"]
+      include ./../logo/logo.pug
+
+      - var classes = ["header__nav"]
+      include ./nav/nav.pug
+
+      - var classes = ["header__search"]
+      include ./search/search.pug

@@ -1,0 +1,17 @@
+mixin project-card(classes, project)
+  article(class=[...classes, "project", `project_${project.type}`])
+    div.project__image(class=project.imageClass aria-hidden="true")
+
+    div.project__info
+      header.project__header
+        time.project__time(datetime=project.date)
+          svg.project__time-icon(aria-hidden="true")
+            use(href="./images/sprite.svg#calendar")
+          = formatDate(project.date)
+        h3.project__heading(class=(project.type !== "large") ? "visually-hidden" : "")= project.title
+
+      p.project__description= project.description
+
+    a.project__link(href="" aria-label="О проекте") О&nbsp;проекте
+
+    span.project__hashtag= `#${project.hashtag}`

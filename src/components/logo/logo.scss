@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.logo {
+  width: 191px;
+  height: 31px;
+
+  @media (max-width: $breakpointL) {
+    width: 166px;
+    height: 27px;
+  }
+
+  @media (max-width: $breakpointS) {
+    width: 112px;
+    height: 18px;
+  }
+}

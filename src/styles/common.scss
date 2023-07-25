@@ -1,0 +1,67 @@
+@import "variables";
+@import "mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+
+  font-family: $primaryFontFamily;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  color: $blackColor;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: calc(
+    $containerMaxWidth + var(--left-container-padding) +
+      var(--right-container-padding)
+  );
+  padding: 0 var(--right-container-padding) 0 var(--left-container-padding);
+  margin: 0 auto;
+}
+
+.logo {
+  @include noText;
+}

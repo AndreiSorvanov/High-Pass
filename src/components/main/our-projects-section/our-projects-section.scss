@@ -1,0 +1,194 @@
+@import "../../../styles/variables";
+
+.our-projects-section {
+  &__container {
+    padding: 72px 0 34px;
+
+    @media (max-width: $breakpointS) {
+      padding: 53px 0 34px;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    margin-bottom: 15px;
+
+    font-family: $secondaryFontFamily;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+
+    @media (max-width: $breakpointS) {
+      margin-bottom: 18px;
+
+      font-size: 18px;
+      line-height: 1;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 300px;
+    gap: 30px;
+
+    @media (max-width: $breakpointL) {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 285px;
+      grid-auto-rows: 307px;
+      row-gap: 24px;
+    }
+
+    @media (max-width: $breakpointM) {
+      grid-template-rows: 300px 300px 312px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 300px;
+      row-gap: 25px;
+    }
+
+    @media (max-width: $breakpointS) {
+      grid-template-rows: 300px 278px 278px 420px 301px 300px 422px;
+      column-gap: 0;
+    }
+  }
+
+  &__item {
+    &_small {
+      grid-column: span 2;
+
+      @media (max-width: $breakpointL) {
+        grid-column: span 2;
+      }
+
+      @media (max-width: $breakpointM) {
+        grid-column: span 4;
+      }
+
+      @media (max-width: $breakpointS) {
+        grid-column: span 12;
+      }
+    }
+
+    &_mixed {
+      grid-column: span 2;
+
+      @media (max-width: $breakpointL) {
+        grid-column: span 4;
+      }
+
+      @media (max-width: $breakpointS) {
+        grid-column: span 12;
+      }
+    }
+
+    &_medium {
+      grid-column: span 3;
+
+      @media (max-width: $breakpointL) {
+        grid-column: span 3;
+      }
+
+      @media (max-width: $breakpointM) {
+        grid-column: span 6;
+      }
+
+      @media (max-width: $breakpointS) {
+        grid-column: span 12;
+      }
+    }
+
+    &_large {
+      grid-column: span 6;
+
+      @media (max-width: $breakpointL) {
+        grid-column: span 5;
+      }
+
+      @media (max-width: $breakpointM) {
+        grid-column: span 12;
+      }
+    }
+
+    @media (max-width: $breakpointL) {
+      &:nth-child(5) {
+        order: 7;
+      }
+
+      &:nth-child(6) {
+        order: 5;
+      }
+
+      &:nth-child(7) {
+        order: 6;
+      }
+    }
+
+    @media (max-width: $breakpointM) {
+      &:nth-child(5) {
+        margin-top: -1px;
+      }
+
+      &:nth-child(6),
+      &:nth-child(7) {
+        margin-top: 5px;
+      }
+    }
+
+    @media (max-width: $breakpointS) {
+      &:nth-child(4) {
+        margin-top: -2px;
+
+        & .project__description {
+          margin-left: -1px;
+        }
+      }
+
+      &:nth-child(5) {
+        margin-top: 0;
+
+        & .project__info {
+          margin-bottom: 17px;
+        }
+
+        & .project__header {
+          gap: 3px;
+          margin-bottom: 3px;
+        }
+      }
+
+      &:nth-child(6) {
+        margin-top: 1px;
+
+        & .project__info {
+          margin-left: 2px;
+        }
+
+        & .project__header {
+          margin-left: -1px;
+        }
+      }
+
+      &:nth-child(7) {
+        margin-top: 0;
+      }
+    }
+
+    @for $i from 1 through 7 {
+      .project-#{$i} {
+        background-image: url("./images/project-#{$i}@1920.jpg");
+
+        @media (max-width: $breakpointL) {
+          background-image: url("./images/project-#{$i}@1024.jpg");
+        }
+
+        @media (max-width: $breakpointM) {
+          background-image: url("./images/project-#{$i}@768.jpg");
+        }
+
+        @media (max-width: $breakpointS) {
+          background-image: url("./images/project-#{$i}@320.jpg");
+        }
+      }
+    }
+  }
+}

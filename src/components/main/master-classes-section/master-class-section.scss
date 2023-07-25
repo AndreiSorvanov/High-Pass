@@ -1,0 +1,53 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.master-classes-section {
+  &__container {
+    display: grid;
+    grid-template: "master-class works" 630px / 1fr 1fr;
+    column-gap: 30px;
+    padding: 41px 0 68px;
+
+    @media (max-width: $breakpointL) {
+      grid-template-rows: 623px;
+      padding: 34px 0 68px;
+    }
+
+    @media (max-width: $breakpointM) {
+      grid-template-rows: 452px;
+      padding: 36px 0 68px;
+    }
+
+    @media (max-width: $breakpointS) {
+      grid-template:
+        "master-class"
+        "works";
+      padding: 30px 0 50px;
+    }
+  }
+
+  &__master-class {
+    grid-area: master-class;
+
+    background-image: url("./images/master-class@1920.jpg");
+
+    @media (max-width: $breakpointL) {
+      background-image: url("./images/master-class@1024.jpg");
+    }
+
+    @media (max-width: $breakpointM) {
+      background-image: url("./images/master-class@768.jpg");
+    }
+
+    @media (max-width: $breakpointS) {
+      height: 422px;
+      margin-bottom: 37px;
+
+      background-image: url("./images/master-class@320.jpg");
+    }
+  }
+
+  &__participants-works {
+    grid-area: works;
+  }
+}

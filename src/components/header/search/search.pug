@@ -1,0 +1,7 @@
+form(class=[...classes, "search", "search_closed"] action="" role="search" name="search" aria-label="Поиск по сайту")
+  div.search__input-container
+    input.search__input(id="search-input" type="search" name="search" placeholder="Что будем искать?" aria-label="Поисковый запрос")
+  button.search__btn(type="button" aria-label="Найти" aria-controls="search-input")
+    svg.search__btn-icon(aria-hidden="true")
+      use.search__btn-icon_open(href="./images/sprite.svg#loupe")
+      use.search__btn-icon_close(href="./images/sprite.svg#cross")

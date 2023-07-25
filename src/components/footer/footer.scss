@@ -1,0 +1,146 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.footer {
+  color: $lightGrayColor;
+
+  background: $blackColor;
+
+  @media (max-width: $breakpointS) {
+    background: linear-gradient($blackColor 122px, $veryDarkGrayColor 122px);
+  }
+
+  &__container {
+    display: grid;
+    grid-template:
+      "logo . quote . contacts"
+      / max-content 185fr max-content 328fr max-content;
+    grid-column-gap: 15px;
+    padding: 24px 0 16px;
+
+    @media (max-width: $breakpointL) {
+      grid-template-columns: max-content 151fr minmax(50px, max-content) 68fr max-content;
+    }
+
+    @media (max-width: $breakpointM) {
+      grid-template:
+        "logo contacts"
+        / max-content max-content;
+      justify-content: space-between;
+      padding: 24px 0 22px;
+    }
+
+    @media (max-width: $breakpointS) {
+      grid-template:
+        "contacts" 106px
+        "logo" 36px
+        / 1fr;
+      justify-items: center;
+      padding: 31px 0 12px;
+    }
+  }
+
+  &__logo-container {
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 2px;
+
+    font-family: $secondaryFontFamily;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    color: $veryLightGrayColor;
+
+    @media (max-width: $breakpointL) {
+      padding-top: 6px;
+    }
+
+    @media (max-width: $breakpointS) {
+      gap: 5px;
+      align-items: center;
+      padding-top: 0;
+    }
+  }
+
+  &__logo {
+    @media (max-width: $breakpointS) {
+      padding-left: 1px;
+    }
+  }
+
+  &__copyright {
+    font-size: inherit;
+
+    @media (max-width: $breakpointS) {
+      font-size: 10px;
+    }
+  }
+
+  &__quote {
+    grid-area: quote;
+    margin: 0;
+
+    @media (max-width: $breakpointM) {
+      display: none;
+    }
+
+    &-text-container {
+      margin: 0;
+    }
+
+    &-text {
+      margin: 0;
+    }
+  }
+
+  &__contacts {
+    grid-area: contacts;
+    font-style: normal;
+
+    &-title {
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    &-list {
+      @include noText;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    &-link {
+      display: block;
+      width: 30px;
+      height: 30px;
+
+      &:focus {
+        outline: none;
+
+        & > .footer__contacts-icon {
+          fill: $strongOrange1Color;
+        }
+      }
+
+      &:hover > .footer__contacts-icon {
+        fill: $vividOrangeColor;
+      }
+
+      &:active > .footer__contacts-icon {
+        fill: $strongOrange2Color;
+      }
+    }
+
+    &-icon {
+      width: 100%;
+      height: 100%;
+
+      fill: $lightGrayColor;
+    }
+  }
+}

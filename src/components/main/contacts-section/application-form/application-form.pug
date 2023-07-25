@@ -1,0 +1,17 @@
+form(class=[...classes, "application-form"], action="" name="application")
+  h3.application-form__heading Оставить заявку
+  p.application-form__description Оставьте ваши данные, указав в&nbsp;графе &laquo;Комментарий&raquo; желаемые время и&nbsp;дату съёмки или&nbsp;другого мероприятия
+
+  div.application-form__rows-container
+    div.application-form__row
+      input.application-form__element.application-form__name(id="name" type="text" name="name" placeholder="Имя" aria-label="Имя" required)
+
+    div.application-form__row
+      input.application-form__element.application-form__email(id="email" type="email" name="email" placeholder="Email" aria-label="Email" required)
+
+    div.application-form__row
+      textarea.application-form__element.application-form__comment(id="message" name="message" placeholder="Комментарий" aria-label="Комментарий")
+
+    div.application-form__buttons
+      button.application-form__submit-btn(type="submit") Отправить
+

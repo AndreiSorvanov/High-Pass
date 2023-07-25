@@ -1,0 +1,109 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.subscription-form {
+  &__heading {
+    margin: 0;
+    margin-bottom: 16px;
+
+    font-family: $secondaryFontFamily;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 0.9;
+    color: $whiteColor;
+
+    @media (max-width: $breakpointL) {
+      margin-left: -2px;
+    }
+
+    @media (max-width: $breakpointM) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $breakpointS) {
+      font-size: 18px;
+    }
+  }
+
+  &__rows-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+    width: 100%;
+
+    @media (max-width: $breakpointL) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+
+  &__row {
+    position: relative;
+
+    flex-grow: 1;
+
+    .just-validate-error-label {
+      @include errorLabel($softRedColor);
+    }
+
+    @media (max-width: $breakpointL) {
+      align-self: stretch;
+      max-width: 342px;
+    }
+
+    @media (max-width: $breakpointS) {
+      width: 100%;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    padding: 16px 23px;
+    border: none;
+
+    font-family: $primaryFontFamily;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.15;
+    color: $whiteColor;
+
+    background-color: $veryDarkGrayColor;
+
+    @media (max-width: $breakpointS) {
+      padding: 13px 23px 11px;
+
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      color: $lightGrayColor;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $vividOrangeColor;
+      }
+    }
+
+    &:focus {
+      outline: 1px solid $vividOrangeColor;
+    }
+
+    &.just-validate-error-field {
+      outline: 1px solid $softRedColor;
+    }
+  }
+
+  &__submit-btn {
+    @include primaryButton;
+
+    flex: 0 0 auto;
+    padding: 18px 23px 16px 22px;
+
+    @media (max-width: $breakpointS) {
+      padding: 14px 22px 12px 22px;
+    }
+  }
+}

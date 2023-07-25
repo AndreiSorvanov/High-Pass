@@ -1,0 +1,44 @@
+$breakpointS: 650px;
+$breakpointM: 800px;
+$breakpointL: 1024px;
+
+:root {
+  --breakpoint-s: #{$breakpointS};
+  --breakpoint-m: #{$breakpointM};
+  --breakpoint-l: #{$breakpointL};
+
+  --left-container-padding: 31px;
+  --right-container-padding: 31px;
+
+  @media (max-width: $breakpointM) {
+    --left-container-padding: 27px;
+    --right-container-padding: 27px;
+  }
+
+  @media (max-width: $breakpointS) {
+    --left-container-padding: 21px;
+    --right-container-padding: 21px;
+  }
+}
+
+$containerMaxWidth: 1290px;
+
+$primaryFontFamily: "Roboto", sans-serif;
+$secondaryFontFamily: "TTFirsNeue", $primaryFontFamily;
+
+$vividOrangeColor: #ff6e30;
+$strongOrange1Color: #bc572b;
+$strongOrange2Color: #ce4307;
+$softRedColor: #f06666;
+$vividRedColor: #ff3030;
+$veryPaleOrange: #ffd4c1;
+$whiteColor: #ffffff;
+$veryLightGrayColor: #e9e9e9;
+$lightGrayColor: #cacaca;
+$darkGrayColor: #999999;
+$veryDarkGrayColor: #4a4a4a;
+$mostlyBlackColor: #202020d9;
+$blackColor: #202020;
+
+$animationDuration: 0.3s;
+$animationTimingFunction: ease;

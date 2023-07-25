@@ -1,0 +1,158 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.nav {
+  &__burger {
+    display: none;
+
+    @media (max-width: $breakpointS) {
+      display: block;
+    }
+  }
+
+  .burger {
+    @include noText;
+
+    width: 20px;
+    height: 18px;
+    border: none;
+    padding: 0;
+
+    background: transparent;
+
+    &__icon {
+      width: 100%;
+      height: 100%;
+
+      &_open {
+        fill: $whiteColor;
+      }
+    }
+  }
+
+  .menu {
+    @media (max-width: $breakpointS) {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      bottom: 0;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100vw;
+      padding: 14px 20px 28px;
+
+      background: $blackColor;
+
+      transition: transform $animationDuration $animationTimingFunction;
+    }
+
+    &_closed {
+      @media (max-width: $breakpointS) {
+        transform: none;
+      }
+    }
+
+    &_opened {
+      @media (max-width: $breakpointS) {
+        transform: translateX(100%);
+      }
+    }
+
+    &__burger {
+      display: none;
+      margin-bottom: 15px;
+
+      @media (max-width: $breakpointS) {
+        display: block;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+
+      @media (max-width: $breakpointS) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 29px;
+      }
+    }
+
+    &__item {
+      @media (max-width: $breakpointS) {
+        &:nth-child(-n + 3) {
+          margin-left: 1px;
+        }
+
+        &:nth-child(n + 4) {
+          margin-left: -2px;
+        }
+      }
+    }
+
+    &__link {
+      position: relative;
+      z-index: 1;
+
+      color: inherit;
+      white-space: nowrap;
+
+      transition: color $animationDuration $animationTimingFunction;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -5px;
+        bottom: 0;
+        left: -5px;
+        z-index: -1;
+
+        background-color: transparent;
+      }
+
+      &:focus {
+        outline: none;
+
+        &::before {
+          background-color: $strongOrange1Color;
+
+          transition: background-color $animationDuration
+            $animationTimingFunction;
+        }
+      }
+
+      &:hover {
+        color: $vividOrangeColor;
+      }
+
+      &:active {
+        color: $strongOrange2Color;
+      }
+    }
+
+    &__contacts {
+      display: none;
+      margin-top: auto;
+      margin-left: -2px;
+
+      font-style: normal;
+
+      @media (max-width: $breakpointS) {
+        display: block;
+      }
+    }
+
+    &__phone {
+      @include phone;
+    }
+  }
+}

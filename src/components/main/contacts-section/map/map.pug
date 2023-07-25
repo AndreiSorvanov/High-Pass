@@ -1,0 +1,14 @@
+div(class=[...classes, "map"])
+  div.map__object(id="map")
+  div.map__contact-info
+    address.map__contacts(id="map-contacts")
+      p.map__organization-name Студия &laquo;High pass&raquo;
+      p.map__address 107045, Москва, Даев переулок, дом&nbsp;41, бизнес-центр &laquo;Даев Плаза&raquo;, этаж&nbsp;8, офис&nbsp;&#8470;&nbsp;82
+        a.map__phone(href=`tel:${phoneNumber}`)
+          svg.map__phone-icon.phone-icon(aria-hidden="true")
+            use(href="./images/sprite.svg#call")
+          = formatPhoneNumber(phoneNumber)
+    button.map__close-btn(id="close-contacts-button" type="button" aria-controls="map-contacts" aria-label="Убрать контактную информацию")
+      svg.map__close-btn-icon(aria-hidden="true")
+        use(href="./images/sprite.svg#cross")
+

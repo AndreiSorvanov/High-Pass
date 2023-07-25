@@ -1,0 +1,15 @@
+section(class=[...classes, "master-classes-section"])
+  div.container
+    div.master-classes-section__container
+      h2.master-classes-section__heading.visually-hidden Мастер-классы
+
+      - var classes = ["master-classes-section__master-class"]
+      include ./master-class/master-class.pug
+
+      - var classes = ["master-classes-section__participants-works"]
+      -
+        var works = [
+          {title: "Работа 1", images: {1920: "./images/participant-work-1@1920.jpg", 1024: "./images/participant-work-1@1024.jpg", 800: "./images/participant-work-1@768.jpg", 650: "./images/participant-work-1@320.jpg"}},
+          {title: "Работа 2", images: {1920: "./images/participant-work-2@1920.jpg", 1024: "./images/participant-work-2@1024.jpg", 800: "./images/participant-work-2@768.jpg", 650: "./images/participant-work-2@320.jpg"}},
+          {title: "Работа 3", images: {1920: "./images/participant-work-3@1920.jpg", 1024: "./images/participant-work-3@1024.jpg", 800: "./images/participant-work-3@768.jpg", 650: "./images/participant-work-3@320.jpg"}}]
+      include ./participants-works/participants-works.pug

@@ -1,0 +1,20 @@
+include ./project/project.pug
+
+section(class=[...classes, "our-projects-section"], id="our-projects")
+  div.container
+    div.our-projects-section__container
+      h2.our-projects-section__heading Наши проекты
+      - var itemClasses = {small: "our-projects-section__item_small", mixed: "our-projects-section__item_mixed", medium: "our-projects-section__item_medium", large: "our-projects-section__item_large"}
+      -
+        var projects = [
+          {type: "small", title: "Проект 1", date: "2023-06-16", description: "Синтетически, смешаны с\xa0не\xa0уникальными данными до\xa0степени совершенной неузнаваемости, из-за чего возрастает их\xa0статус бесполезности", hashtag: "пейзаж", imageClass: "project-1"},
+          {type: "small", title: "Проект 2", date: "2023-05-28", description: "В\xa0своём стремлении улучшить опыт мы упускаем, что явные исследования конкурентов будут смешаны с\xa0не\xa0уникальными данными до\xa0степени совершенной неузнаваемости, из-за чего возрастает их\xa0статус бесполезности", hashtag: "портрет", imageClass: "project-2"},
+          {type: "mixed", title: "Проект 3", date: "2023-05-14", description: "Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада", hashtag: "предмет", imageClass: "project-3"},
+          {type: "large", title: "Семантический разбор", date: "2023-04-09", description: "В\xa0рамках спецификации современных стандартов, интерактивные прототипы", hashtag: "fuji", imageClass: "project-4"},
+          {type: "large", title: "Забвение", date: "2023-03-20", description: "Играет важную роль в\xa0формировании глубокомысленных рассуждений", hashtag: "проектзабвение", imageClass: "project-5"},
+          {type: "medium", title: "Проект 6", date: "2023-03-09", description: "Как принято считать, многие известные личности и\xa0по\xa0сей день остаются уделом либералов однозначно\xa0которые\xa0жаждут\xa0быть преданы социально-демократической анафеме", hashtag: "ретушь", imageClass: "project-6"},
+          {type: "medium", title: "Проект 7", date: "2023-03-01", description: "С\xa0учётом сложившейся международной обстановки, новая модель организационной деятельности однозначно определяет каждого участника как способного принимать собственные решения касаемо позиций, занимаемых участниками в\xa0отношении поставленных задач", hashtag: "портрет", imageClass: "project-7"}]
+      ul.our-projects-section__list
+        each project in projects
+          li.our-projects-section__item(class=itemClasses[project.type])
+            +project-card(["our-projects-section__project"], project)

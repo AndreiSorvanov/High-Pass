@@ -1,0 +1,68 @@
+@import "../../styles/variables";
+
+.header {
+  font-family: $secondaryFontFamily;
+  color: $whiteColor;
+
+  background: $blackColor;
+
+  @media (max-width: $breakpointM) {
+    background: linear-gradient($blackColor 80px, $veryDarkGrayColor 80px);
+  }
+
+  @media (max-width: $breakpointS) {
+    background: linear-gradient($blackColor 70px, $veryDarkGrayColor 70px);
+  }
+
+  &__container {
+    display: grid;
+    grid-template:
+      "logo . menu . search"
+      / min-content minmax(0, 119px) 1fr minmax(0, 173px) min-content;
+    place-items: center center;
+    grid-column-gap: 10px;
+    padding: 24px 0 25px;
+
+    @media (max-width: $breakpointL) {
+      grid-template-columns: min-content minmax(0, 62px) 1fr minmax(0, 111px) min-content;
+    }
+
+    @media (max-width: $breakpointM) {
+      grid-template:
+        "logo search"
+        "menu menu"
+        / minmax(min-content, 1fr) minmax(min-content, 1fr);
+      grid-row-gap: 37px;
+      padding: 27px 0 12px;
+    }
+
+    @media (max-width: $breakpointS) {
+      grid-row-gap: 35px;
+      padding: 21px 0 13px;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    justify-self: start;
+  }
+
+  &__nav {
+    grid-area: menu;
+    width: 100%;
+  }
+
+  &__search {
+    grid-area: search;
+    justify-self: end;
+    margin-top: 1px;
+
+    @media (max-width: $breakpointM) {
+      margin-top: -4px;
+    }
+
+    @media (max-width: $breakpointS) {
+      margin-top: -2px;
+    }
+  }
+}

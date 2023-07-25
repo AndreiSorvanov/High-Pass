@@ -1,0 +1,92 @@
+@import "../../../styles/variables";
+
+.contacts-section {
+  &__container {
+    padding: 38px 0 68px;
+
+    @media (max-width: $breakpointS) {
+      padding: 3px 0 50px;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    margin-bottom: 19px;
+
+    font-family: $secondaryFontFamily;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+
+    @media (max-width: $breakpointL) {
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: $breakpointS) {
+      margin-bottom: 10px;
+      margin-left: -1px;
+
+      font-size: 18px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+
+    @media (max-width: $breakpointL) {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @media (max-width: $breakpointM) {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 466px;
+      row-gap: 24px;
+    }
+
+    @media (max-width: $breakpointS) {
+      grid-template-rows: 478px;
+      row-gap: 26px;
+      column-gap: 0;
+    }
+  }
+
+  &__map {
+    grid-column: span 8;
+    margin-top: 6px;
+
+    @media (max-width: $breakpointL) {
+      grid-column: span 5;
+    }
+
+    @media (max-width: $breakpointM) {
+      grid-column: span 12;
+    }
+
+    @media (max-width: $breakpointS) {
+      position: relative;
+      left: calc(-1 * var(--left-container-padding));
+
+      width: calc(
+        100% + var(--left-container-padding) + var(--right-container-padding)
+      );
+    }
+  }
+
+  &__application-form {
+    grid-column: span 4;
+
+    @media (max-width: $breakpointL) {
+      grid-column: span 3;
+    }
+
+    @media (max-width: $breakpointM) {
+      grid-column: span 8;
+    }
+
+    @media (max-width: $breakpointS) {
+      grid-column: span 12;
+    }
+  }
+}

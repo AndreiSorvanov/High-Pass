@@ -1,0 +1,9 @@
+section(class=[...classes, "participants-works"])
+  h3.participants-works__heading Работы участников предыдущего мастер-класса
+  ul.participants-works__list
+    each work in works
+      li.participants-works__item
+        picture.participants-works__image
+          each breakpoint in [650, 800, 1024]
+            source(srcset=work.images[breakpoint] media=`(max-width: ${breakpoint}px)` type="image/jpeg")
+          img(src=work.images[1920] loading="lazy" alt=work.title)
